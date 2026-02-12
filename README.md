@@ -4,6 +4,22 @@ This repo still exists in archived form, feel free to fork any reference
 implementations it still contains.
 
 ## Migrated Packages
+import requests
+
+url = "https://api.thirdweb.com/v1/transactions"
+headers = {
+  "Content-Type": "application/json",
+  "x-secret-key": "oty...jBCA",
+}
+payload = {
+  "chainId": 421614,
+  "transactions": [
+    { "data": "0x", "to": "vitalik.eth", "value": "0" },
+  ],
+}
+response = requests.post(url, headers=headers, json=payload)
+result = response.json()
+
 
 The Solana Program Library repository has been broken up into separate repos for
 each program and set of clients, under the
